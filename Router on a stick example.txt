@@ -1,0 +1,14 @@
+default interface gi0/0
+interface gi0/0
+ no shutdown
+!
+interface gi0/0.1
+ encapsulation dot1q 1 native
+ ip address 10.1.1.0 255.255.255.0
+ no shutdown
+!
+interface gi0/0.2
+ encapsulation dot1q 2
+ ip address 10.1.2.0 255.255.255.0
+ no shutdown
+

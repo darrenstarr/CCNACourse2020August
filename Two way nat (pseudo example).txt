@@ -1,0 +1,14 @@
+# This was from the explaination of two way nat
+# this is not a big studying topic.
+
+# Create a pool of addresses with 91 addresses available
+# from 10.3.1.10 through 10.3.1.100
+ip nat pool POOL_B_TO_A 10.3.1.10 10.3.1.100
+
+ip access-list standard ACL_NAT_B_TO_A
+ 10 permit 10.1.0.0 0.0.0.255
+
+ip nat outside source list ACL_NAT_B_TO_A pool POOL_B_TO_A
+
+ip nat inside source 10.1.1.2 10.2.1.2
+ip nat inside source 10.1.1.15 interface Gi0/0

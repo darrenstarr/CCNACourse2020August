@@ -1,0 +1,7 @@
+# Permit only RFC1918 Private IP addresses
+ip access-list standard ACL_NAT
+ permit 10.0.0.0 0.255.255.255
+ permit 172.16.0.0 0.15.255.255
+ permit 192.168.0.0 0.0.255.255
+
+ip nat inside source list ACL_NAT interface Gi0/0 overload

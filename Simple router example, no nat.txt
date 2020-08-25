@@ -1,0 +1,6 @@
+interface G0/0
+ ip address dhcp
+ no shutdown
+interface G0/1
+ ip address 195.1.1.1 255.255.255.0
+ no shutdown
